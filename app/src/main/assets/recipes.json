@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Biga Pizza Dough",
+    "category": "Main",
+    "calories": 250,
+    "vegan": true,
+    "ingredients": ["1kg flour", "1g yeast", "water", "salt"]
+  },
+  {
+    "name": "Adjaruli Khachapuri",
+    "category": "Main",
+    "calories": 650,
+    "vegan": false,
+    "ingredients": ["flour", "sulguni cheese", "egg", "butter"]
+  },
+  {
+    "name": "Tulum Cheese & Dark Chocolate Dessert",
+    "category": "Dessert",
+    "calories": 420,
+    "vegan": false,
+    "ingredients": ["tulum cheese", "dark chocolate", "cream"]
+  }
+]
