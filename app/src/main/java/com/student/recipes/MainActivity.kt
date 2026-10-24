@@ -27,17 +27,29 @@ class MainActivity : AppCompatActivity() {
             for (i in 0 until jsonArray.length()) {
                 val jsonObject = jsonArray.getJSONObject(i)
                 val map = HashMap<String, String>()
+                
                 map["name"] = jsonObject.getString("name")
-                map["category"] = jsonObject.getString("category")
-                map["calories"] = "🔥 " + jsonObject.getInt("calories") + " kcal"
+                map["calories"] = "🔥 Calories: " + jsonObject.getInt("calories") + " kcal"
+                
+                val ingredientsArray = jsonObject.getJSONArray("ingredients")
+                var ingredientsText = "Ingredients:\n"
+                
+                for (j in 0 until ingredientsArray.length()) {
+                    ingredientsText += "• " + ingredientsArray.getString(j)
+                    if (j < ingredientsArray.length() - 1) {
+                        ingredientsText += "\n"
+                    }
+                }
+                map["ingredients"] = ingredientsText
+                
                 recipeList.add(map)
             }
         } catch (e: Exception) {
             e.printStackTrace()
         }
 
-        val from = arrayOf("name", "category", "calories")
-        val to = intArrayOf(R.id.recipeName, R.id.recipeCategory, R.id.recipeCalories)
+        val from = arrayOf("name", "calories", "ingredients")
+        val to = intArrayOf(R.id.recipeName, R.id.recipeCalories, R.id.recipeIngredients)
 
         val adapter = SimpleAdapter(this, recipeList, R.layout.list_item_recipe, from, to)
         listView.adapter = adapter
