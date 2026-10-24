@@ -3,19 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#F5F5F5"
     android:padding="16dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="My Recipe Collection"
-        android:textSize="24sp"
+        android:textSize="26sp"
         android:textStyle="bold"
+        android:textColor="#1A1A1A"
         android:paddingBottom="16dp" />
 
     <ListView
         android:id="@+id/recipeListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp" />
 
 </LinearLayout>
